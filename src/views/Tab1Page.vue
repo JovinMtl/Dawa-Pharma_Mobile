@@ -15,7 +15,7 @@
          <div class="content1" style="background-color: greenyellow; width: 100%; height: 4px">
           <div class="element1"></div>
          </div>
-         <div class="content2" style="background-color: grey; width: 100%; height: 98%;">
+         <div class="content2" style="background-color: grey; width: 100%; height: 98%; font-weight: 700;">
           <div class="element1" style="display: flex;width: 100%; height: 25px">
             <div class="elem1" style="width: 30%; height: 100%; border: 1px solid black; color: #000;">
               Médicament
