@@ -16,15 +16,21 @@
           <div class="element1"></div>
          </div>
          <div class="content2" style="background-color: grey; width: 100%; height: 98%;">
-          <div class="element1" style="display: flex;background-color: seashell; width: 100%; height: 25px">
-            <div class="elem1" style="width: 40%; height: 100%; border: 1px solid black; color: #000;">
-              Medicament
+          <div class="element1" style="display: flex;width: 100%; height: 25px">
+            <div class="elem1" style="width: 30%; height: 100%; border: 1px solid black; color: #000;">
+              Médicament
             </div>
             <div class="elem1" style="width: 10%; height: 100%; border: 1px solid black; color: #000;">
               Qte
             </div>
             <div class="elem1" style="width: 20%; height: 100%; border: 1px solid black; color: #000;">
               Px.A
+            </div>
+            <div class="elem1" style="width: 20%; height: 100%; border: 1px solid black; color: #000;">
+              Px.V
+            </div>
+            <div class="elem1" style="width: 20%; height: 100%; border: 1px solid black; color: #000;">
+              Bénéf
             </div>
           </div>
          </div>
