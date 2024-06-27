@@ -20,21 +20,37 @@
             <div class="elem1" style="width: 30%; height: 100%; border: 1px solid black; color: #000;">
               Médicament
             </div>
-            <div class="elem1" style="width: 10%; height: 100%; border: 1px solid black; color: #000;">
+            <div class="elem2" style="width: 10%; height: 100%; border: 1px solid black; color: #000;">
               Qte
             </div>
-            <div class="elem1" style="width: 20%; height: 100%; border: 1px solid black; color: #000;">
+            <div class="elem3" style="width: 20%; height: 100%; border: 1px solid black; color: #000;">
               Px.A
             </div>
-            <div class="elem1" style="width: 20%; height: 100%; border: 1px solid black; color: #000;">
+            <div class="elem4" style="width: 20%; height: 100%; border: 1px solid black; color: #000;">
               Px.V
             </div>
-            <div class="elem1" style="width: 20%; height: 100%; border: 1px solid black; color: #000;">
+            <div class="elem5" style="width: 20%; height: 100%; border: 1px solid black; color: #000;">
               Bénéf
             </div>
           </div>
-          <div class="element2" style="background-color: white; width: 100%; height: 90%;">
-
+          <div class="element2" style="background-color: white; width: 100%; height: 90%; color: #000;">
+            <div class="element1" style="display: flex;width: 100%; height: 25px">
+              <div class="elem1" style="width: 30%; height: 100%; border: 1px solid black; color: #000;">
+                Médicament
+              </div>
+              <div class="elem2" style="width: 10%; height: 100%; border: 1px solid black; color: #000;">
+                Qte
+              </div>
+              <div class="elem3" style="width: 20%; height: 100%; border: 1px solid black; color: #000;">
+                Px.A
+              </div>
+              <div class="elem4" style="width: 20%; height: 100%; border: 1px solid black; color: #000;">
+                Px.V
+              </div>
+              <div class="elem5" style="width: 20%; height: 100%; border: 1px solid black; color: #000;">
+                Bénéf
+              </div>
+            </div>
           </div>
          </div>
          <div class="content3" style="background-color: greenyellow; width: 100%; height: 4px"></div>
