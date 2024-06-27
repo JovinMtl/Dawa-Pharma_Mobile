@@ -55,9 +55,9 @@
           </div>
 
           <div class="element2" style="width: 100%; height: 5%; color: #000;">
-            <div class="element1" style="display: flex;width: 100%; height: 25px">
+            <div class="element1" style="display: flex;width: 100%; height: 25px; text-align: right;">
               <div class="elem1" style="width: 30%; height: 100%; border: 1px solid black; color: #000;">
-                Médicament
+                Total
               </div>
               <div class="elem2" style="width: 10%; height: 100%; border: 1px solid black; color: #000;">
                 Qte
