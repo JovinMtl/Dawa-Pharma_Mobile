@@ -89,7 +89,7 @@ import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue
 import { useKuvoma } from '../hooks/kuvoma.js'
 
 const disponible = ref(null)
-const [qte_t, pa_t, pv_t, ben_t] = ref([0,0,0,0])
+const totaux = ref(null)
 
 const url_kuvoma = 'api/out/dispo/'
 const [dispo, kuvoma_function] = useKuvoma(url_kuvoma)
@@ -117,6 +117,7 @@ onMounted(()=>{
 watch(dispo, (value)=>{
   console.log("Dispo changed into :", value)
   disponible.value = value
+  totaux.value = totaux_function()
 })
 </script>
 
