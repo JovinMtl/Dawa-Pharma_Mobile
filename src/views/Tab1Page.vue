@@ -89,6 +89,7 @@ import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue
 import { useKuvoma } from '../hooks/kuvoma.js'
 
 const disponible = ref(null)
+const [qte_t, pa_t, pv_t, ben_t] = ref([0,0,0,0])
 
 const url_kuvoma = 'api/out/dispo/'
 const [dispo, kuvoma_function] = useKuvoma(url_kuvoma)
