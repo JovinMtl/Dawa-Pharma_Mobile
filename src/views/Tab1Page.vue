@@ -35,9 +35,9 @@
           </div>
 
           <div class="element2" style="background-color: white; width: 100%; height: 91%; color: #000;">
-            <div class="element1" style="display: flex;width: 100%; height: 25px">
+            <div v-for="med in disponible" class="element1" style="display: flex;width: 100%; height: 25px">
               <div class="elem1" style="width: 30%; height: 100%; border: 1px solid black; color: #000;">
-                Médicament
+                {{ (med.name_umuti).slice(0,8) }}
               </div>
               <div class="elem2" style="width: 10%; height: 100%; border: 1px solid black; color: #000;">
                 Qte
@@ -82,8 +82,23 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted, ref, watch } from 'vue'
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
-import ExploreContainer from '@/components/ExploreContainer.vue';
+import { useKuvoma } from '../hooks/kuvoma.js'
+
+const disponible = ref(null)
+
+const url_kuvoma = 'api/out/dispo/'
+const [dispo, other_function] = useKuvoma(url_kuvoma)
+onMounted(()=>{
+  other_function()
+  console.log("But we can have: ", dispo.value)
+})
+console.log("THe things gotten are: ", dispo.value)
+watch(dispo, (value)=>{
+  console.log("Dispo changed into :", value)
+  disponible.value = value
+})
 </script>
 
 <style scoped>
