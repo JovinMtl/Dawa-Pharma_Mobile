@@ -62,16 +62,16 @@
                 Total
               </div>
               <div class="elem2" style="width: 10%; height: 100%; border: 1px solid black; color: #000;">
-                Qte
+                {{ qte_t }}
               </div>
               <div class="elem3" style="width: 20%; height: 100%; border: 1px solid black; color: #000;">
-                Px.A
+                {{ pa_t }}
               </div>
               <div class="elem4" style="width: 20%; height: 100%; border: 1px solid black; color: #000;">
-                Px.V
+                {{ pv_t }}
               </div>
               <div class="elem5" style="width: 20%; height: 100%; border: 1px solid black; color: #000;">
-                Bénéf
+                {{ ben_t }}
               </div>
             </div>
           </div>
@@ -90,6 +90,10 @@ import { useKuvoma } from '../hooks/kuvoma.js'
 
 const disponible = ref(null)
 const totaux = ref(null)
+const qte_t = ref(0)
+const pa_t = ref(0)
+const pv_t = ref(0)
+const ben_t = ref(0)
 
 const url_kuvoma = 'api/out/dispo/'
 const [dispo, kuvoma_function] = useKuvoma(url_kuvoma)
@@ -98,16 +102,18 @@ const totaux_function = ()=>{
   let qte = 0
   let pa = 0
   let pv = 0
-  let ben = 0
 
   disponible.value.forEach(element => {
     qte += element.quantite_restant
     pa += element.price_in * element.quantite_restant
     pv += element.price_out * element.quantite_restant
-    ben += Number(element.quantite_restant) * (Number(element.price_out - element.quantite_restant))
   });
 
-  return [qte, pa, pv, ben]
+  qte_t.value = qte
+  pa_t.value = pa
+  pv_t.value = pv
+  ben_t.value = pv - pa
+  // return [qte, pa, pv, ben]
 }
 
 onMounted(()=>{
@@ -117,7 +123,8 @@ onMounted(()=>{
 watch(dispo, (value)=>{
   console.log("Dispo changed into :", value)
   disponible.value = value
-  totaux.value = totaux_function()
+  // totaux.value = 
+  totaux_function()
 })
 </script>
 
