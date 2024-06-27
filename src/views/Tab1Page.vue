@@ -23,6 +23,9 @@
             <div class="elem1" style="width: 10%; height: 100%; border: 1px solid black; color: #000;">
               Qte
             </div>
+            <div class="elem1" style="width: 20%; height: 100%; border: 1px solid black; color: #000;">
+              Px.A
+            </div>
           </div>
          </div>
          <div class="content3" style="background-color: greenyellow; width: 100%; height: 4px"></div>
