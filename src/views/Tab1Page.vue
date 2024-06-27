@@ -11,7 +11,7 @@
           <ion-title size="large">Tab 1</ion-title>
         </ion-toolbar>
       </ion-header>
-      <div class="page1Container" style="width: 100%; height: 100%;">
+      <div class="page1Container" style="width: 100%; height: 100%; overflow: hidden;">
          <div class="content1" style="background-color: greenyellow; width: 100%; height: 4px">
           <div class="element1"></div>
          </div>
@@ -35,7 +35,7 @@
           </div>
 
           <div class="element2" style="background-color: white; width: 100%; height: 91%; 
-            color: #000;overflow: hidden;">
+            color: #000;overflow: auto;">
             <div v-for="med in disponible" class="element1" style="display: flex;width: 100%; height: 25px;
                  ">
               <div class="elem1" style="width: 30%; height: 100%; border: 1px solid black; color: #000;">
@@ -57,7 +57,7 @@
           </div>
 
           <div class="element2" style="width: 100%; height: 5%; color: #000;">
-            <div class="element1" style="display: flex;width: 100%; height: 25px; text-align: right;">
+            <div class="element1" style="display: flex;width: 100%; height: 25px; text-align: center;">
               <div class="elem1" style="width: 30%; height: 100%; border: 1px solid black; color: #000;">
                 Total
               </div>
@@ -113,7 +113,6 @@ const totaux_function = ()=>{
   pa_t.value = pa
   pv_t.value = pv
   ben_t.value = pv - pa
-  // return [qte, pa, pv, ben]
 }
 
 onMounted(()=>{
@@ -123,7 +122,6 @@ onMounted(()=>{
 watch(dispo, (value)=>{
   console.log("Dispo changed into :", value)
   disponible.value = value
-  // totaux.value = 
   totaux_function()
 })
 </script>
