@@ -42,16 +42,16 @@
                 {{ (med.name_umuti).slice(0,8) }}
               </div>
               <div class="elem2" style="width: 10%; height: 100%; border: 1px solid black; color: #000;">
-                Qte
+                {{ med.quantite_restant }}
               </div>
               <div class="elem3" style="width: 20%; height: 100%; border: 1px solid black; color: #000;">
-                Px.A
+                {{ med.price_in }}
               </div>
               <div class="elem4" style="width: 20%; height: 100%; border: 1px solid black; color: #000;">
-                Px.V
+                {{ med.price_out }}
               </div>
               <div class="elem5" style="width: 20%; height: 100%; border: 1px solid black; color: #000;">
-                Bénéf
+                {{ (Number(med.price_out) - Number(med.price_in)) * (Number(med.quantite_restant)) }}
               </div>
             </div>
           </div>
@@ -91,12 +91,28 @@ import { useKuvoma } from '../hooks/kuvoma.js'
 const disponible = ref(null)
 
 const url_kuvoma = 'api/out/dispo/'
-const [dispo, other_function] = useKuvoma(url_kuvoma)
+const [dispo, kuvoma_function] = useKuvoma(url_kuvoma)
+
+const totaux_function = ()=>{
+  let qte = 0
+  let pa = 0
+  let pv = 0
+  let ben = 0
+
+  disponible.value.forEach(element => {
+    qte += element.quantite_restant
+    pa += element.price_in * element.quantite_restant
+    pv += element.price_out * element.quantite_restant
+    ben += Number(element.quantite_restant) * (Number(element.price_out - element.quantite_restant))
+  });
+
+  return [qte, pa, pv, ben]
+}
+
 onMounted(()=>{
-  other_function()
-  console.log("But we can have: ", dispo.value)
+  kuvoma_function()
 })
-console.log("THe things gotten are: ", dispo.value)
+
 watch(dispo, (value)=>{
   console.log("Dispo changed into :", value)
   disponible.value = value
