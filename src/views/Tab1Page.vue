@@ -12,13 +12,13 @@
         </ion-toolbar>
       </ion-header>
       <div class="page1Container" style="width: 100%; height: 100%;">
-        <!-- <p>content1</p> -->
-        <!-- <ExploreContainer name="Tab 1 page" /> -->
          <div class="content1" style="background-color: greenyellow; width: 100%; height: 4px">
           <div class="element1"></div>
          </div>
          <div class="content2" style="background-color: grey; width: 100%; height: 98%;">
-          <div class="element1"></div>
+          <div class="element1" style="background-color: seashell; width: 100%; height: 20px">
+            <div class="elem1"></div>
+          </div>
          </div>
          <div class="content3" style="background-color: greenyellow; width: 100%; height: 4px"></div>
       </div>
