@@ -16,9 +16,12 @@
           <div class="element1"></div>
          </div>
          <div class="content2" style="background-color: grey; width: 100%; height: 98%;">
-          <div class="element1" style="background-color: seashell; width: 100%; height: 25px">
+          <div class="element1" style="display: flex;background-color: seashell; width: 100%; height: 25px">
             <div class="elem1" style="width: 40%; height: 100%; border: 1px solid black; color: #000;">
               Medicament
+            </div>
+            <div class="elem1" style="width: 10%; height: 100%; border: 1px solid black; color: #000;">
+              Qte
             </div>
           </div>
          </div>
