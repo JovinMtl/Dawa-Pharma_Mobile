@@ -33,6 +33,9 @@
               Bénéf
             </div>
           </div>
+          <div class="element2" style="background-color: white; width: 100%; height: 90%;">
+
+          </div>
          </div>
          <div class="content3" style="background-color: greenyellow; width: 100%; height: 4px"></div>
       </div>
