@@ -98,8 +98,8 @@ const pa_t = ref(0)
 const pv_t = ref(0)
 const ben_t = ref(0)
 
-const entree_url = 'api/rep/reportEntree/'
-const [dispo, kuvoma_function] = useKuvoma(entree_url)
+const suggest_url = 'api/rep/workOn35/'
+const [dispo, kuvoma_function] = useKuvoma(suggest_url)
 
 const totaux_function = ()=>{
   let qte = 0
