@@ -43,7 +43,7 @@
                 {{ (med.name_umuti).slice(0,8) }}
               </div>
               <div class="elem2" style="width: 10%; height: 100%; border: 1px solid black; color: #000;">
-                {{ med.quantity }}
+                {{ med.quantite_restant }}
               </div>
               <div class="elem3" style="width: 20%; height: 100%; border: 1px solid black; color: #000;">
                 {{ med.price_in }}
@@ -52,7 +52,7 @@
                 {{ med.price_out }}
               </div>
               <div class="elem5" style="width: 20%; height: 100%; border: 1px solid black; color: #000;">
-                {{ (Number(med.price_out) - Number(med.price_in)) * (Number(med.price_in)) }}
+                {{ (Number(med.price_out) - Number(med.price_in)) * (Number(med.quantite_restant)) }}
               </div>
             </div>
           </div>
@@ -98,8 +98,8 @@ const pa_t = ref(0)
 const pv_t = ref(0)
 const ben_t = ref(0)
 
-const vente_url = 'api/rep/reportSold/'
-const [dispo, kuvoma_function] = useKuvoma(vente_url)
+const entree_url = 'api/rep/reportEntree/'
+const [dispo, kuvoma_function] = useKuvoma(entree_url)
 
 const totaux_function = ()=>{
   let qte = 0
@@ -107,9 +107,9 @@ const totaux_function = ()=>{
   let pv = 0
 
   disponible.value.forEach(element => {
-    qte += element.quantity
-    pa += element.price_in * element.quantity
-    pv += element.price_out * element.quantity
+    qte += element.quantite_restant
+    pa += element.price_in * element.quantite_restant
+    pv += element.price_out * element.quantite_restant
   });
 
   qte_t.value = qte
