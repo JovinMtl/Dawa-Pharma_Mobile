@@ -43,7 +43,7 @@
                 {{ (med.name_umuti).slice(0,8) }}
               </div>
               <div class="elem2" style="width: 10%; height: 100%; border: 1px solid black; color: #000;">
-                {{ med.quantite_restant }}
+                {{ med.quantity }}
               </div>
               <div class="elem3" style="width: 20%; height: 100%; border: 1px solid black; color: #000;">
                 {{ med.price_in }}
@@ -52,7 +52,7 @@
                 {{ med.price_out }}
               </div>
               <div class="elem5" style="width: 20%; height: 100%; border: 1px solid black; color: #000;">
-                {{ (Number(med.price_out) - Number(med.price_in)) * (Number(med.quantite_restant)) }}
+                {{ (Number(med.price_out) - Number(med.price_in)) * (Number(med.price_in)) }}
               </div>
             </div>
           </div>
@@ -80,7 +80,6 @@
          <div class="content3" style="background-color: greenyellow; width: 100%; height: 4px"></div>
       </div>
 
-      <ExploreContainer name="Tab 2 page" />
     </ion-content>
   </ion-page>
 </template>
@@ -99,8 +98,8 @@ const pa_t = ref(0)
 const pv_t = ref(0)
 const ben_t = ref(0)
 
-const url_kuvoma = 'api/out/dispo/'
-const [dispo, kuvoma_function] = useKuvoma(url_kuvoma)
+const vente_url = 'api/rep/reportSold/'
+const [dispo, kuvoma_function] = useKuvoma(vente_url)
 
 const totaux_function = ()=>{
   let qte = 0
@@ -108,9 +107,9 @@ const totaux_function = ()=>{
   let pv = 0
 
   disponible.value.forEach(element => {
-    qte += element.quantite_restant
-    pa += element.price_in * element.quantite_restant
-    pv += element.price_out * element.quantite_restant
+    qte += element.quantity
+    pa += element.price_in * element.quantity
+    pv += element.price_out * element.quantity
   });
 
   qte_t.value = qte
