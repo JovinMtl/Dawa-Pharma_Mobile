@@ -87,7 +87,6 @@
 <script setup lang="ts">
 import { onMounted, ref, watch } from 'vue'
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
-import ExploreContainer from '@/components/ExploreContainer.vue';
 
 import { useKuvoma } from '../hooks/kuvoma.js'
 
